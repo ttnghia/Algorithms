@@ -149,9 +149,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="catch.hpp" />
     <ClInclude Include="DataGenerator.h" />
     <ClInclude Include="DataWriter.h" />

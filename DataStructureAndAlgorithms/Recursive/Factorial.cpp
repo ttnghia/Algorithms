@@ -10,7 +10,10 @@ size_t Factorial(size_t number)
 
 TEST_CASE("Factorials are computed")
 {
-    printf("Factorial of 20 is: %s\n", NumberUtils::format_with_commas(Factorial(20)).c_str());
+    for(size_t i = 0; i <= 20; ++i)
+    {
+        printf("Factorial of %2zd is: %s\n", i, NumberUtils::format_with_commas(Factorial(i)).c_str());
+    }
 
     REQUIRE(Factorial(1) == 1);
     REQUIRE(Factorial(2) == 2);
