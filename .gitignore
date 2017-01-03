@@ -1,0 +1,11 @@
+**/*.swp
+**/*.user
+**/*.user.*
+**/*.o
+**/*.a
+**/*.autosave
+**/*.db
+**/*.opendb
+**/*.idb
+**/.vs
+**/log.txt
