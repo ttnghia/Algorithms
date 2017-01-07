@@ -164,6 +164,7 @@
     <ClCompile Include="ProgramTemplate.cpp" />
     <ClCompile Include="Recursive\Factorial.cpp" />
     <ClCompile Include="Recursive\HanoiTower.cpp" />
+    <ClCompile Include="Recursive\MergeSort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataStructureAndAlgorithms.licenseheader" />

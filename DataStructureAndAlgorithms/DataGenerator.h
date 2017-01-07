@@ -20,8 +20,8 @@
 //                    `""`  `""`  `""`  `""`
 //------------------------------------------------------------------------------------------
 
-#ifndef __DATA_GENERATOR_H__
-#define __DATA_GENERATOR_H__
+#ifndef __Data_Generator__
+#define __Data_Generator__
 
 #include <random>
 #include <vector>
@@ -229,4 +229,4 @@ T** generate_random_real_array_2D(size_t array_size_x, size_t array_size_y, T mi
 
 
 } // end namespace DataGenerator
-#endif // __DATA_GENERATOR_H__
+#endif // __Data_Generator__
