@@ -3,7 +3,7 @@
 //           (-o/\o-)
 //          /`""``""`\
 //          \ /.__.\ /
-//           \ `--` /                                                 Created on: 1/3/2017
+//           \ `--` /                                                 Created on: 1/7/2017
 //            `)  ('                                                    Author: Nghia Truong
 //         ,  /::::\  ,
 //         |'.\::::/.'|
@@ -20,29 +20,21 @@
 //                    `""`  `""`  `""`  `""`
 //------------------------------------------------------------------------------------------
 
-#include "../ProgramParameters.h"
+#include "ProgramParameters.h"
 
-#ifdef __factorial__
+#ifdef __Program_Template__
 
 #include "../GlobalParameters.h"     ▐
 //------------------------------------------------------------------------------------------
-size_t Factorial(size_t number)
+void func()
 {
-    return number <= 1 ? number : Factorial(number - 1)*number;
+
 }
 
-TEST_CASE("Factorials are computed")
+TEST_CASE("Test Case")
 {
-    for(size_t i = 0; i <= 20; ++i)
-    {
-        printf("Factorial of %2zd is: %s\n", i, NumberUtils::format_with_commas(Factorial(i)).c_str());
-    }
-
-    REQUIRE(Factorial(1) == 1);
-    REQUIRE(Factorial(2) == 2);
-    REQUIRE(Factorial(3) == 6);
-    REQUIRE(Factorial(10) == 3628800);
+    REQUIRE(1 == 1);
 }
 
 //------------------------------------------------------------------------------------------
-#endif // __factorial__                                         
+#endif // __Program_Template__                                         

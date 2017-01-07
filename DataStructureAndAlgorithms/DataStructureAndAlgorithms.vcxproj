@@ -75,7 +75,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>D:\Scratch\MSVC-Build\$(ProjectName)\$(Configuration)\</OutDir>
-    <IntDir>D:\Scratch\MSVC-Build\$(ProjectName)\$(Configuration)\Intermediate</IntDir>
+    <IntDir>D:\Scratch\MSVC-Build\$(ProjectName)\$(Configuration)\Intermediate\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -83,7 +83,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>D:\Scratch\MSVC-Build\$(ProjectName)\$(Configuration)\</OutDir>
-    <IntDir>D:\Scratch\MSVC-Build\$(ProjectName)\$(Configuration)\Intermediate</IntDir>
+    <IntDir>D:\Scratch\MSVC-Build\$(ProjectName)\$(Configuration)\Intermediate\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -155,12 +155,15 @@
     <ClInclude Include="GlobalParameters.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="NumberUtils.h" />
+    <ClInclude Include="ProgramParameters.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataGenerator.cpp" />
     <ClCompile Include="DataWriter.cpp" />
+    <ClCompile Include="ProgramTemplate.cpp" />
     <ClCompile Include="Recursive\Factorial.cpp" />
+    <ClCompile Include="Recursive\HanoiTower.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataStructureAndAlgorithms.licenseheader" />

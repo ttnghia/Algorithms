@@ -3,7 +3,7 @@
 //           (-o/\o-)
 //          /`""``""`\
 //          \ /.__.\ /
-//           \ `--` /                                                 Created on: 1/3/2017
+//           \ `--` /                                                 Created on: 1/7/2017
 //            `)  ('                                                    Author: Nghia Truong
 //         ,  /::::\  ,
 //         |'.\::::/.'|
@@ -22,27 +22,31 @@
 
 #include "../ProgramParameters.h"
 
-#ifdef __factorial__
+#ifdef __Hanoi_Tower__ 
 
-#include "../GlobalParameters.h"     ▐
+#include "../GlobalParameters.h"
+
+int step = 0;
+
 //------------------------------------------------------------------------------------------
-size_t Factorial(size_t number)
+void move_disks(int num_disks, int source, int dest, int intermediate)
 {
-    return number <= 1 ? number : Factorial(number - 1)*number;
-}
-
-TEST_CASE("Factorials are computed")
-{
-    for(size_t i = 0; i <= 20; ++i)
+    if(num_disks > 0)
     {
-        printf("Factorial of %2zd is: %s\n", i, NumberUtils::format_with_commas(Factorial(i)).c_str());
-    }
+        move_disks(num_disks - 1, source, intermediate, dest);
 
-    REQUIRE(Factorial(1) == 1);
-    REQUIRE(Factorial(2) == 2);
-    REQUIRE(Factorial(3) == 6);
-    REQUIRE(Factorial(10) == 3628800);
+        printf("%4d: Move %d -> %d\n", step++, source, dest);
+
+        move_disks(num_disks - 1, intermediate, dest, source);
+    }
 }
 
 //------------------------------------------------------------------------------------------
-#endif // __factorial__                                         
+TEST_CASE("Move Disks")
+{
+    move_disks(3, 1, 3, 2);
+
+}
+
+//------------------------------------------------------------------------------------------
+#endif // __Hanoi_Tower__
