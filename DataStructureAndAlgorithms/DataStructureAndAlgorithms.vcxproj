@@ -159,11 +159,13 @@
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BackTracking\nQueens.cpp" />
     <ClCompile Include="DataGenerator.cpp" />
     <ClCompile Include="DataWriter.cpp" />
     <ClCompile Include="ProgramTemplate.cpp" />
     <ClCompile Include="Recursive\Factorial.cpp" />
     <ClCompile Include="Recursive\HanoiTower.cpp" />
+    <ClCompile Include="Recursive\LongestIncreasingSequence.cpp" />
     <ClCompile Include="Recursive\MergeSort.cpp" />
   </ItemGroup>
   <ItemGroup>

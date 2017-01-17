@@ -1,9 +1,9 @@
-//------------------------------------------------------------------------------------------
+﻿//------------------------------------------------------------------------------------------
 //            .-..-.
 //           (-o/\o-)
 //          /`""``""`\
 //          \ /.__.\ /
-//           \ `--` /                                                 Created on: 1/7/2017
+//           \ `--` /                                                 Created on: 1/17/2017
 //            `)  ('                                                    Author: Nghia Truong
 //         ,  /::::\  ,
 //         |'.\::::/.'|
@@ -20,17 +20,33 @@
 //                    `""`  `""`  `""`  `""`
 //------------------------------------------------------------------------------------------
 
-#ifndef __Problem_Parameters__
-#define __Problem_Parameters__
+#include "../ProgramParameters.h"
+
+#ifdef __Longest_Inc_Sequence__
+
+#include "../GlobalParameters.h"
+#include <vector>
 
 //------------------------------------------------------------------------------------------
-// define which program to run
-//#define __factorial__
-//#define __Hanoi_Tower__
-//#define __Merge_Sort__
-#define __nQueens__
-#define __Longest_Inc_Sequence__
 
 
 //------------------------------------------------------------------------------------------
-#endif // __Problem_Parameters__
+void find_lis(std::vector<int>& sequence)
+{
+
+}
+
+//------------------------------------------------------------------------------------------
+TEST_CASE("Tested Longest Inc. Sequence")
+{
+    std::vector<int> list_1 = {3, 5, 8, 9, 0, 10, 5, 7, 18, 9};
+    std::vector<int> list_2 = {1, 5, 8, 0, 4, 11, 74, 1, 7, 18, 15, 3, 8};
+    std::vector<int> list_3 = {1, 34, 2, 8, 1, 9, 4, 7, 13, 8, 9, 2, 5, 28, 8, 2};
+
+    find_lis(list_1);
+    find_lis(list_2);
+    find_lis(list_3);
+}
+
+//------------------------------------------------------------------------------------------
+#endif // __Longest_Inc_Sequence__                                         

@@ -27,10 +27,6 @@ namespace DataWriter
 {
 //------------------------------------------------------------------------------------------
 
-void print_char_array(char* array)
-{
-    printf("%s\n", array);
-}
 
 //------------------------------------------------------------------------------------------
 void print_int_array(int* array, size_t array_size, const char* separator)

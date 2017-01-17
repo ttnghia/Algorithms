@@ -23,6 +23,7 @@
 #ifndef __DATA_WRITER_H__
 #define __DATA_WRITER_H__
 
+#include <iostream>
 #include <vector>
 #include <map>
 #include <set>
@@ -32,8 +33,26 @@ namespace DataWriter
 {
 //------------------------------------------------------------------------------------------
 
-void print_char_array(char* array);
-void print_int_array(int* array, size_t array_size, const char* separator = ", ");
+inline void print_char_array(char* array)
+{
+    printf("%s\n", array);
+}
+
+template<class T>
+void print_array(T* array, size_t array_size, const char* separator = ", ")
+{
+    if(array_size == 0) return;
+
+    for(size_t i = 0; i < array_size - 1; ++i)
+    {
+        std::cout << array[i] << separator;
+    }
+
+    if(array_size > 1)
+    {
+        std::cout << array[i] << std::endl;
+    }
+}
 void print_float_array(float* array, size_t array_size, const char* separator = ", ");
 void print_double_array(double* array, size_t array_size, const char* separator = ", ");
 
