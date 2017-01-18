@@ -28,12 +28,43 @@
 #include <vector>
 
 //------------------------------------------------------------------------------------------
+int find_max_subsequence(const std::vector<int>& sequence,
+                         std::vector<int>& result,
+                         size_t start_position,
+                         int prev_number)
+{
+    if(start_position >= sequence.size())
+        return  0;
 
+    std::vector<int> result1;
+    std::vector<int> result2;
+
+    int max1 = find_max_subsequence(sequence, result1, start_position + 1, prev_number);
+    int max2 = (sequence[start_position] <= prev_number) ? 0 :
+        find_max_subsequence(sequence, result2, start_position + 1, sequence[start_position]) + 1;
+
+    if(max2 <= max1)
+    {
+        result.insert(result.end(), result1.begin(), result1.end());
+
+        return max1;
+    }
+    else
+    {
+        result.push_back(sequence[start_position]);
+        result.insert(result.end(), result2.begin(), result2.end());
+
+        return max2;
+    }
+}
 
 //------------------------------------------------------------------------------------------
-void find_lis(std::vector<int>& sequence)
+void find_lis(const std::vector<int>& sequence)
 {
+    std::vector<int> result;
+    find_max_subsequence(sequence, result, 0, -1e100);
 
+    DataWriter::print_vector(result);
 }
 
 //------------------------------------------------------------------------------------------
