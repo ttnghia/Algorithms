@@ -29,29 +29,31 @@
 #include <vector>
 
 //------------------------------------------------------------------------------------------
-void print_queens(std::vector<int>& queen_positions)
-{
-    for(size_t i = 0; i < queen_positions.size() - 1; ++i)
-    {
-        printf("%d, ", queen_positions[i]);
-    }
-    printf("%d\n", queen_positions.back());
-}
-//------------------------------------------------------------------------------------------
 void find_queen_position(int board_size, std::vector<int>& queen_positions, int row)
 {
     if(row >= board_size)
-        print_queens(queen_positions);
+    {
+        DataWriter::print_vector<int>(queen_positions);
+        return;
+    }
 
     for(int col = 0; col < board_size; ++col)
     {
-        for(int prev = 0; prev < row; ++prev)
+        int valid = true;
+        for(int prev_row = 0; prev_row < row; ++prev_row)
         {
-            if(queen_positions[prev] == col ||
-               queen_positions[prev] == col - prev + 1 ||
-               queen_positions[prev] == col + prev - 1)
-                continue;
+            if(queen_positions[prev_row] == col ||
+               queen_positions[prev_row] == col - (row - prev_row) ||
+               queen_positions[prev_row] == col + (row - prev_row))
+            {
+                valid = false;
+                break;
+            }
 
+        }
+
+        if(valid)
+        {
             queen_positions[row] = col;
             find_queen_position(board_size, queen_positions, row + 1);
         }
@@ -61,20 +63,15 @@ void find_queen_position(int board_size, std::vector<int>& queen_positions, int 
 void find_queens(int board_size)
 {
     std::vector<int> queen_positions;
-    queen_positions.assign(board_size, -1);
+    queen_positions.assign(board_size, -1000);
 
-    for(int row = 0; row < board_size; ++row)
-    {
-        find_queen_position(board_size, queen_positions, row);
-    }
+    find_queen_position(board_size, queen_positions, 0);
 }
 
 //------------------------------------------------------------------------------------------
 TEST_CASE("Tested nQueens")
 {
-    find_queens(5);
     find_queens(8);
-    find_queens(10);
 }
 
 //------------------------------------------------------------------------------------------

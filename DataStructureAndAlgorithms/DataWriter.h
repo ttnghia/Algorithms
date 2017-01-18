@@ -24,6 +24,7 @@
 #define __DATA_WRITER_H__
 
 #include <iostream>
+#include <string>
 #include <vector>
 #include <map>
 #include <set>
@@ -33,13 +34,41 @@ namespace DataWriter
 {
 //------------------------------------------------------------------------------------------
 
-inline void print_char_array(char* array)
+inline void print_char_array(const char* array)
 {
     printf("%s\n", array);
 }
 
+inline void print_char_vector(std::vector<char>& array)
+{
+    print_char_array(array.data());
+}
+
+//------------------------------------------------------------------------------------------
+inline void print_char_array(const char* message, const char* array)
+{
+    printf("%s: %s\n", message, array);
+}
+
+inline void print_char_vector(const char* message, const std::vector<char>& array)
+{
+    print_char_array(message, array.data());
+}
+
+//------------------------------------------------------------------------------------------
+inline void print_char_array(const std::string message, const char* array)
+{
+    printf("%s: %s\n", message.c_str(), array);
+}
+
+inline void print_char_vector(const std::string message, const std::vector<char>& array)
+{
+    print_char_array(message, array.data());
+}
+
+//------------------------------------------------------------------------------------------
 template<class T>
-void print_array(T* array, size_t array_size, const char* separator = ", ")
+void print_array(const T* array, size_t array_size, const char* separator = ", ")
 {
     if(array_size == 0) return;
 
@@ -48,18 +77,58 @@ void print_array(T* array, size_t array_size, const char* separator = ", ")
         std::cout << array[i] << separator;
     }
 
-    if(array_size > 1)
-    {
-        std::cout << array[i] << std::endl;
-    }
+    std::cout << array[array_size - 1] << std::endl;
 }
-void print_float_array(float* array, size_t array_size, const char* separator = ", ");
-void print_double_array(double* array, size_t array_size, const char* separator = ", ");
 
-void print_char_vector(std::vector<char>& array);
-void print_int_vector(std::vector<int>& array, const char* separator = ", ");
-void print_float_vector(std::vector<float>& array, const char* separator = ", ");
-void print_double_vector(std::vector<double>& array, const char* separator = ", ");
+template<class T>
+void print_vector(const std::vector<T>& array, const char* separator = ", ")
+{
+    print_array<T>(array.data(), array.size(), separator);
+}
+
+//------------------------------------------------------------------------------------------
+template<class T>
+void print_array(const char* message, const T* array, size_t array_size, const char* separator = ", ")
+{
+    if(array_size == 0) return;
+
+    std::cout << message << ": ";
+
+    for(size_t i = 0; i < array_size - 1; ++i)
+    {
+        std::cout << array[i] << separator;
+    }
+
+    std::cout << array[array_size - 1] << std::endl;
+}
+
+template<class T>
+void print_vector(const char* message, const std::vector<T>& array, const char* separator = ", ")
+{
+    print_array<T>(message, array.data(), array.size(), separator);
+}
+
+//------------------------------------------------------------------------------------------
+template<class T>
+void print_array(const std::string message, const T* array, size_t array_size, const char* separator = ", ")
+{
+    if(array_size == 0) return;
+
+    std::cout << message << ": ";
+
+    for(size_t i = 0; i < array_size - 1; ++i)
+    {
+        std::cout << array[i] << separator;
+    }
+
+    std::cout << array[array_size - 1] << std::endl;
+}
+
+template<class T>
+void print_vector(const std::string message, const std::vector<T>& array, const char* separator = ", ")
+{
+    print_array<T>(message, array.data(), array.size(), separator);
+}
 
 //------------------------------------------------------------------------------------------
 } // end namespace DataWriter
