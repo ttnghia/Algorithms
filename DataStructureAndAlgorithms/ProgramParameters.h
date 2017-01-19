@@ -29,7 +29,8 @@
 //#define __Hanoi_Tower__
 //#define __Merge_Sort__
 //#define __nQueens__
-#define __Longest_Inc_Sequence__
+//#define __Longest_Inc_Sequence__
+#define __Sum_To_Number__
 
 
 //------------------------------------------------------------------------------------------

@@ -160,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackTracking\nQueens.cpp" />
+    <ClCompile Include="BackTracking\SumToNumber.cpp" />
     <ClCompile Include="DataGenerator.cpp" />
     <ClCompile Include="ProgramTemplate.cpp" />
     <ClCompile Include="Recursive\Factorial.cpp" />
