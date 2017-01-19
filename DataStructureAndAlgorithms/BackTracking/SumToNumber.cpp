@@ -42,7 +42,7 @@ bool find_list(const std::vector<int>& dvector,
     }
     else
     {
-        find_list(dvector, result, startIndex + 1, sum);
+        return find_list(dvector, result, startIndex + 1, sum);
     }
 
 }
@@ -61,7 +61,7 @@ TEST_CASE("Test Case")
 
         if(bResult)
         {
-            DataWriter::print_vector(result);
+            DataWriter::print_vector_reverse(result);
             int sum = 0;
             for(auto i : result)
             {

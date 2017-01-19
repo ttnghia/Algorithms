@@ -27,6 +27,7 @@
 #include <vector>
 #include <set>
 #include <list>
+#include <map>
 
 //------------------------------------------------------------------------------------------
 namespace DataGenerator
@@ -46,9 +47,27 @@ T generate_random_int(T start, T end)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(start, end);
+    std::uniform_int_distribution<T> dis(start, end);
 
     return dis(gen);
+}
+
+template<class T>
+T generate_random_int_unique(T start, T end, std::map<T, bool>& existenceMap)
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<T> dis(start, end);
+
+    T tmp;
+    do
+    {
+        tmp = dis(gen);
+    } while(existenceMap[tmp] == true);
+
+    existenceMap[tmp] = true;
+
+    return tmp;
 }
 
 //------------------------------------------------------------------------------------------
@@ -57,7 +76,7 @@ T generate_random_real(T start, T end)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<> dis(start, end);
+    std::uniform_real_distribution<T> dis(start, end);
 
     return dis(gen);
 }
@@ -72,6 +91,23 @@ T* generate_random_int_array(size_t array_size, T min_value = 0,
     for(size_t i = 0; i < array_size; ++i)
     {
         array[i] = generate_random_int(min_value, max_value);
+    }
+
+    return array;
+}
+
+template<class T>
+T* generate_random_int_array_unique(size_t array_size, T min_value = 0,
+                                    T max_value = std::numeric_limits<T>::max())
+{
+    assert(array_size > (max_value - min_value));
+    std::map<T, bool>& existenceMap;
+
+    T* array = allocate_array<T>(array_size);
+
+    for(size_t i = 0; i < array_size; ++i)
+    {
+        array[i] = generate_random_int_unique(min_value, max_value, existenceMap);
     }
 
     return array;
@@ -104,6 +140,24 @@ std::vector<T> generate_random_int_vector(size_t array_size, T min_value = 0,
     for(size_t i = 0; i < array_size; ++i)
     {
         array[i] = generate_random_int(min_value, max_value);
+    }
+
+    return array;
+}
+
+template<class T>
+std::vector<T> generate_random_int_vector_unique(size_t array_size, T min_value = 0,
+                                                 T max_value = std::numeric_limits<T>::max())
+{
+    assert(array_size > (max_value - min_value));
+    std::map<T, bool>& existenceMap;
+
+    std::vector<T> array;
+    array.resize(array_size);
+
+    for(size_t i = 0; i < array_size; ++i)
+    {
+        array[i] = generate_random_int_unique(min_value, max_value, existenceMap);
     }
 
     return array;

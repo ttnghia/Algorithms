@@ -44,9 +44,6 @@
     <ClCompile Include="Recursive\Factorial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DataGenerator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Recursive\HanoiTower.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

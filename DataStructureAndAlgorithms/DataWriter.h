@@ -68,22 +68,42 @@ inline void print_char_vector(const std::string message, const std::vector<char>
 
 //------------------------------------------------------------------------------------------
 template<class T>
-void print_array(const T* array, size_t array_size, const char* separator = ", ")
+void print_array(const T* array, size_t arraySize, const char* separator = ", ")
 {
-    if(array_size == 0) return;
+    if(arraySize == 0) return;
 
-    for(size_t i = 0; i < array_size - 1; ++i)
+    for(size_t i = 0; i < arraySize - 1; ++i)
     {
         std::cout << array[i] << separator;
     }
 
-    std::cout << array[array_size - 1] << std::endl;
+    std::cout << array[arraySize - 1] << std::endl;
 }
 
 template<class T>
 void print_vector(const std::vector<T>& array, const char* separator = ", ")
 {
     print_array<T>(array.data(), array.size(), separator);
+}
+
+//------------------------------------------------------------------------------------------
+template<class T>
+void print_array_reverse(const T* array, size_t arraySize, const char* separator = ", ")
+{
+    if(arraySize == 0) return;
+
+    for(size_t i = arraySize - 1; i >= 1; --i)
+    {
+        std::cout << array[i] << separator;
+    }
+
+    std::cout << array[0] << std::endl;
+}
+
+template<class T>
+void print_vector_reverse(const std::vector<T>& array, const char* separator = ", ")
+{
+    print_array_reverse<T>(array.data(), array.size(), separator);
 }
 
 //------------------------------------------------------------------------------------------
@@ -107,28 +127,28 @@ void print_vector(const char* message, const std::vector<T>& array, const char* 
 {
     print_array<T>(message, array.data(), array.size(), separator);
 }
-
 //------------------------------------------------------------------------------------------
 template<class T>
-void print_array(const std::string message, const T* array, size_t array_size, const char* separator = ", ")
+void print_array_reverse(const char* message, const T* array, size_t array_size, const char* separator = ", ")
 {
     if(array_size == 0) return;
 
     std::cout << message << ": ";
 
-    for(size_t i = 0; i < array_size - 1; ++i)
+    for(size_t i = array_size - 1; i >= 1; --i)
     {
         std::cout << array[i] << separator;
     }
 
-    std::cout << array[array_size - 1] << std::endl;
+    std::cout << array[0] << std::endl;
 }
 
 template<class T>
-void print_vector(const std::string message, const std::vector<T>& array, const char* separator = ", ")
+void print_vector_reverse(const char* message, const std::vector<T>& array, const char* separator = ", ")
 {
     print_array<T>(message, array.data(), array.size(), separator);
 }
+
 
 //------------------------------------------------------------------------------------------
 } // end namespace DataWriter
