@@ -1,4 +1,4 @@
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 //            .-..-.
 //           (-o/\o-)
 //          /`""``""`\
@@ -18,7 +18,7 @@
 //             \::::/::::\/::::\/::::\/::::\::::/
 //               `""`\::::/\::::/\::::/\::::/`""`
 //                    `""`  `""`  `""`  `""`
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 #ifndef __Data_Generator__
 #define __Data_Generator__
@@ -29,10 +29,10 @@
 #include <list>
 #include <map>
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 namespace DataGenerator
 {
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 T* allocate_array(size_t array_size)
 {
@@ -41,7 +41,7 @@ T* allocate_array(size_t array_size)
     return array;
 }
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 T generate_random_int(T start, T end)
 {
@@ -70,7 +70,7 @@ T generate_random_int_unique(T start, T end, std::map<T, bool>& existenceMap)
     return tmp;
 }
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 T generate_random_real(T start, T end)
 {
@@ -81,7 +81,7 @@ T generate_random_real(T start, T end)
     return dis(gen);
 }
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 T* generate_random_int_array(size_t array_size, T min_value = 0,
                              T max_value = std::numeric_limits<T>::max())
@@ -113,7 +113,7 @@ T* generate_random_int_array_unique(size_t array_size, T min_value = 0,
     return array;
 }
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 T* generate_random_real_array(size_t array_size, T min_value = 0,
                               T max_value = std::numeric_limits<T>::max())
@@ -129,7 +129,7 @@ T* generate_random_real_array(size_t array_size, T min_value = 0,
 }
 
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 std::vector<T> generate_random_int_vector(size_t array_size, T min_value = 0,
                                           T max_value = std::numeric_limits<T>::max())
@@ -163,7 +163,7 @@ std::vector<T> generate_random_int_vector_unique(size_t array_size, T min_value 
     return array;
 }
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 std::vector<T> generate_random_real_vector(size_t array_size, T min_value = 0,
                                            T max_value = std::numeric_limits<T>::max())
@@ -180,7 +180,7 @@ std::vector<T> generate_random_real_vector(size_t array_size, T min_value = 0,
 }
 
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 std::set<T> generate_random_int_set(size_t array_size, T min_value = 0,
                                     T max_value = std::numeric_limits<T>::max())
@@ -195,7 +195,7 @@ std::set<T> generate_random_int_set(size_t array_size, T min_value = 0,
     return array;
 }
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 std::set<T> generate_random_real_set(size_t array_size, T min_value = 0,
                                      T max_value = std::numeric_limits<T>::max())
@@ -210,7 +210,7 @@ std::set<T> generate_random_real_set(size_t array_size, T min_value = 0,
     return array;
 }
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 std::list<T> generate_random_int_list(size_t array_size, T min_value = 0,
                                       T max_value = std::numeric_limits<T>::max())
@@ -225,7 +225,7 @@ std::list<T> generate_random_int_list(size_t array_size, T min_value = 0,
     return array;
 }
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 std::list<T> generate_random_real_list(size_t array_size, T min_value = 0,
                                        T max_value = std::numeric_limits<T>::max())
@@ -240,7 +240,7 @@ std::list<T> generate_random_real_list(size_t array_size, T min_value = 0,
     return array;
 }
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 T** generate_random_int_array_2D(size_t array_size_x, size_t array_size_y, T min_value = 0,
                                  T max_value = std::numeric_limits<T>::max())
@@ -260,7 +260,7 @@ T** generate_random_int_array_2D(size_t array_size_x, size_t array_size_y, T min
     return array;
 }
 
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 T** generate_random_real_array_2D(size_t array_size_x, size_t array_size_y, T min_value = 0,
                                   T max_value = std::numeric_limits<T>::max())
@@ -279,7 +279,7 @@ T** generate_random_real_array_2D(size_t array_size_x, size_t array_size_y, T mi
 
     return array;
 }
-//------------------------------------------------------------------------------------------
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 
 } // end namespace DataGenerator
