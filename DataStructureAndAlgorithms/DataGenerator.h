@@ -1,4 +1,4 @@
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 //            .-..-.
 //           (-o/\o-)
 //          /`""``""`\
@@ -18,7 +18,7 @@
 //             \::::/::::\/::::\/::::\/::::\::::/
 //               `""`\::::/\::::/\::::/\::::/`""`
 //                    `""`  `""`  `""`  `""`
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 #ifndef __Data_Generator__
 #define __Data_Generator__
@@ -29,35 +29,35 @@
 #include <list>
 #include <map>
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 namespace DataGenerator
 {
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-T* allocate_array(size_t array_size)
+T* allocate_array(size_t arrSize)
 {
-    T* array = new T[array_size];
+    T* array = new T[arrSize];
 
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-T generate_random_int(T start, T end)
+T generate_random_int(T startVal, T endVal)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<T> dis(start, end);
+    std::uniform_int_distribution<T> dis(startVal, endVal);
 
     return dis(gen);
 }
 
 template<class T>
-T generate_random_int_unique(T start, T end, std::map<T, bool>& existenceMap)
+T generate_random_int_unique(T startVal, T endVal, std::map<T, bool>& existenceMap)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<T> dis(start, end);
+    std::uniform_int_distribution<T> dis(startVal, endVal);
 
     T tmp;
     do
@@ -70,216 +70,216 @@ T generate_random_int_unique(T start, T end, std::map<T, bool>& existenceMap)
     return tmp;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-T generate_random_real(T start, T end)
+T generate_random_real(T startVal, T endVal)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<T> dis(start, end);
+    std::uniform_real_distribution<T> dis(startVal, endVal);
 
     return dis(gen);
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-T* generate_random_int_array(size_t array_size, T min_value = 0,
-                             T max_value = std::numeric_limits<T>::max())
+T* generate_random_int_array(size_t arrSize, T minVal = 0,
+                             T maxVal = std::numeric_limits<T>::max())
 {
-    T* array = allocate_array<T>(array_size);
+    T* array = allocate_array<T>(arrSize);
 
-    for(size_t i = 0; i < array_size; ++i)
+    for(size_t i = 0; i < arrSize; ++i)
     {
-        array[i] = generate_random_int(min_value, max_value);
+        array[i] = generate_random_int(minVal, maxVal);
     }
 
     return array;
 }
 
 template<class T>
-T* generate_random_int_array_unique(size_t array_size, T min_value = 0,
-                                    T max_value = std::numeric_limits<T>::max())
+T* generate_random_int_array_unique(size_t arrSize, T minVal = 0,
+                                    T maxVal = std::numeric_limits<T>::max())
 {
-    assert(array_size > (max_value - min_value));
+    assert(arrSize > (maxVal - minVal));
     std::map<T, bool>& existenceMap;
 
-    T* array = allocate_array<T>(array_size);
+    T* array = allocate_array<T>(arrSize);
 
-    for(size_t i = 0; i < array_size; ++i)
+    for(size_t i = 0; i < arrSize; ++i)
     {
-        array[i] = generate_random_int_unique(min_value, max_value, existenceMap);
+        array[i] = generate_random_int_unique(minVal, maxVal, existenceMap);
     }
 
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-T* generate_random_real_array(size_t array_size, T min_value = 0,
-                              T max_value = std::numeric_limits<T>::max())
+T* generate_random_real_array(size_t arrSize, T minVal = 0,
+                              T maxVal = std::numeric_limits<T>::max())
 {
-    T* array = allocate_array<T>(array_size);
+    T* array = allocate_array<T>(arrSize);
 
-    for(size_t i = 0; i < array_size; ++i)
+    for(size_t i = 0; i < arrSize; ++i)
     {
-        array[i] = generate_random_real(min_value, max_value);
+        array[i] = generate_random_real(minVal, maxVal);
     }
 
     return array;
 }
 
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::vector<T> generate_random_int_vector(size_t array_size, T min_value = 0,
-                                          T max_value = std::numeric_limits<T>::max())
+std::vector<T> generate_random_int_vector(size_t arrSize, T minVal = 0,
+                                          T maxVal = std::numeric_limits<T>::max())
 {
     std::vector<T> array;
-    array.resize(array_size);
+    array.resize(arrSize);
 
-    for(size_t i = 0; i < array_size; ++i)
+    for(size_t i = 0; i < arrSize; ++i)
     {
-        array[i] = generate_random_int(min_value, max_value);
+        array[i] = generate_random_int(minVal, maxVal);
     }
 
     return array;
 }
 
 template<class T>
-std::vector<T> generate_random_int_vector_unique(size_t array_size, T min_value = 0,
-                                                 T max_value = std::numeric_limits<T>::max())
+std::vector<T> generate_random_int_vector_unique(size_t arrSize, T minVal = 0,
+                                                 T maxVal = std::numeric_limits<T>::max())
 {
-    assert(array_size > (max_value - min_value));
+    assert(arrSize > (maxVal - minVal));
     std::map<T, bool>& existenceMap;
 
     std::vector<T> array;
-    array.resize(array_size);
+    array.resize(arrSize);
 
-    for(size_t i = 0; i < array_size; ++i)
+    for(size_t i = 0; i < arrSize; ++i)
     {
-        array[i] = generate_random_int_unique(min_value, max_value, existenceMap);
+        array[i] = generate_random_int_unique(minVal, maxVal, existenceMap);
     }
 
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::vector<T> generate_random_real_vector(size_t array_size, T min_value = 0,
-                                           T max_value = std::numeric_limits<T>::max())
+std::vector<T> generate_random_real_vector(size_t arrSize, T minVal = 0,
+                                           T maxVal = std::numeric_limits<T>::max())
 {
     std::vector<T> array;
-    array.resize(array_size);
+    array.resize(arrSize);
 
-    for(size_t i = 0; i < array_size; ++i)
+    for(size_t i = 0; i < arrSize; ++i)
     {
-        array[i] = generate_random_real(min_value, max_value);
+        array[i] = generate_random_real(minVal, maxVal);
     }
 
     return array;
 }
 
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::set<T> generate_random_int_set(size_t array_size, T min_value = 0,
-                                    T max_value = std::numeric_limits<T>::max())
+std::set<T> generate_random_int_set(size_t arrSize, T minVal = 0,
+                                    T maxVal = std::numeric_limits<T>::max())
 {
     std::set<T> array;
 
-    for(size_t i = 0; i < array_size; ++i)
+    for(size_t i = 0; i < arrSize; ++i)
     {
-        array.insert(generate_random_int(min_value, max_value));
+        array.insert(generate_random_int(minVal, maxVal));
     }
 
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::set<T> generate_random_real_set(size_t array_size, T min_value = 0,
-                                     T max_value = std::numeric_limits<T>::max())
+std::set<T> generate_random_real_set(size_t arrSize, T minVal = 0,
+                                     T maxVal = std::numeric_limits<T>::max())
 {
     std::set<T> array;
 
-    for(size_t i = 0; i < array_size; ++i)
+    for(size_t i = 0; i < arrSize; ++i)
     {
-        array.insert(generate_random_real(min_value, max_value));
+        array.insert(generate_random_real(minVal, maxVal));
     }
 
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::list<T> generate_random_int_list(size_t array_size, T min_value = 0,
-                                      T max_value = std::numeric_limits<T>::max())
+std::list<T> generate_random_int_list(size_t arrSize, T minVal = 0,
+                                      T maxVal = std::numeric_limits<T>::max())
 {
     std::list<T> array;
 
-    for(size_t i = 0; i < array_size; ++i)
+    for(size_t i = 0; i < arrSize; ++i)
     {
-        array.insert(generate_random_int(min_value, max_value));
+        array.insert(generate_random_int(minVal, maxVal));
     }
 
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::list<T> generate_random_real_list(size_t array_size, T min_value = 0,
-                                       T max_value = std::numeric_limits<T>::max())
+std::list<T> generate_random_real_list(size_t arrSize, T minVal = 0,
+                                       T maxVal = std::numeric_limits<T>::max())
 {
     std::list<T> array;
 
-    for(size_t i = 0; i < array_size; ++i)
+    for(size_t i = 0; i < arrSize; ++i)
     {
-        array.insert(generate_random_real(min_value, max_value));
+        array.insert(generate_random_real(minVal, maxVal));
     }
 
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-T** generate_random_int_array_2D(size_t array_size_x, size_t array_size_y, T min_value = 0,
-                                 T max_value = std::numeric_limits<T>::max())
+T** generate_random_int_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal = 0,
+                                 T maxVal = std::numeric_limits<T>::max())
 {
-    T** array = allocate_array<T*>(array_size_x);
+    T** array = allocate_array<T*>(arrSize_x);
 
-    for(size_t k = 0; k < array_size_y; ++k)
+    for(size_t k = 0; k < arrSize_y; ++k)
     {
-        array[k] = allocate_array<T>(array_size_y);
+        array[k] = allocate_array<T>(arrSize_y);
 
-        for(size_t i = 0; i < array_size_y; ++i)
+        for(size_t i = 0; i < arrSize_y; ++i)
         {
-            array[k][i] = generate_random_int(min_value, max_value);
+            array[k][i] = generate_random_int(minVal, maxVal);
         }
     }
 
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-T** generate_random_real_array_2D(size_t array_size_x, size_t array_size_y, T min_value = 0,
-                                  T max_value = std::numeric_limits<T>::max())
+T** generate_random_real_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal = 0,
+                                  T maxVal = std::numeric_limits<T>::max())
 {
-    T** array = allocate_array<T*>(array_size_x);
+    T** array = allocate_array<T*>(arrSize_x);
 
-    for(size_t k = 0; k < array_size_y; ++k)
+    for(size_t k = 0; k < arrSize_y; ++k)
     {
-        array[k] = allocate_array<T>(array_size_y);
+        array[k] = allocate_array<T>(arrSize_y);
 
-        for(size_t i = 0; i < array_size_y; ++i)
+        for(size_t i = 0; i < arrSize_y; ++i)
         {
-            array[k][i] = generate_random_real(min_value, max_value);
+            array[k][i] = generate_random_real(minVal, maxVal);
         }
     }
 
     return array;
 }
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 
 } // end namespace DataGenerator
