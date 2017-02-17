@@ -1,27 +1,21 @@
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-//            .-..-.
-//           (-o/\o-)
-//          /`""``""`\
-//          \ /.__.\ /
-//           \ `--` /                                                 Created on: 1/3/2017
-//            `)  ('                                                    Author: Nghia Truong
-//         ,  /::::\  ,
-//         |'.\::::/.'|
-//        _|  ';::;'  |_
-//       (::)   ||   (::)                       _.
-//        "|    ||    |"                      _(:)
-//         '.   ||   .'                       /::\
-//           '._||_.'                         \::/
-//            /::::\                         /:::\
-//            \::::/                        _\:::/
-//             /::::\_.._  _.._  _.._  _.._/::::\
-//             \::::/::::\/::::\/::::\/::::\::::/
-//               `""`\::::/\::::/\::::/\::::/`""`
-//                    `""`  `""`  `""`  `""`
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//
+//  Copyright (c) 2017 by
+//       __      _     _         _____
+//    /\ \ \__ _| |__ (_) __ _  /__   \_ __ _   _  ___  _ __   __ _
+//   /  \/ / _` | '_ \| |/ _` |   / /\/ '__| | | |/ _ \| '_ \ / _` |
+//  / /\  / (_| | | | | | (_| |  / /  | |  | |_| | (_) | | | | (_| |
+//  \_\ \/ \__, |_| |_|_|\__,_|  \/   |_|   \__,_|\___/|_| |_|\__, |
+//         |___/                                              |___/
+//
+//  <nghiatruong.vn@gmail.com>
+//  All rights reserved.
+//
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-#ifndef __Data_Generator__
-#define __Data_Generator__
+#pragma once
 
 #include <random>
 #include <vector>
@@ -29,19 +23,18 @@
 #include <list>
 #include <map>
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 namespace DataGenerator
 {
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 T* allocate_array(size_t arrSize)
 {
     T* array = new T[arrSize];
-
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 T generate_random_int(T startVal, T endVal)
 {
@@ -70,7 +63,7 @@ T generate_random_int_unique(T startVal, T endVal, std::map<T, bool>& existenceM
     return tmp;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
 T generate_random_real(T startVal, T endVal)
 {
@@ -81,10 +74,9 @@ T generate_random_real(T startVal, T endVal)
     return dis(gen);
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-T* generate_random_int_array(size_t arrSize, T minVal = 0,
-                             T maxVal = std::numeric_limits<T>::max())
+T* generate_random_int_array(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     T* array = allocate_array<T>(arrSize);
 
@@ -97,8 +89,7 @@ T* generate_random_int_array(size_t arrSize, T minVal = 0,
 }
 
 template<class T>
-T* generate_random_int_array_unique(size_t arrSize, T minVal = 0,
-                                    T maxVal = std::numeric_limits<T>::max())
+T* generate_random_int_array_unique(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     assert(arrSize > (maxVal - minVal));
     std::map<T, bool>& existenceMap;
@@ -113,10 +104,9 @@ T* generate_random_int_array_unique(size_t arrSize, T minVal = 0,
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-T* generate_random_real_array(size_t arrSize, T minVal = 0,
-                              T maxVal = std::numeric_limits<T>::max())
+T* generate_random_real_array(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     T* array = allocate_array<T>(arrSize);
 
@@ -129,10 +119,9 @@ T* generate_random_real_array(size_t arrSize, T minVal = 0,
 }
 
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::vector<T> generate_random_int_vector(size_t arrSize, T minVal = 0,
-                                          T maxVal = std::numeric_limits<T>::max())
+std::vector<T> generate_random_int_vector(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     std::vector<T> array;
     array.resize(arrSize);
@@ -146,8 +135,7 @@ std::vector<T> generate_random_int_vector(size_t arrSize, T minVal = 0,
 }
 
 template<class T>
-std::vector<T> generate_random_int_vector_unique(size_t arrSize, T minVal = 0,
-                                                 T maxVal = std::numeric_limits<T>::max())
+std::vector<T> generate_random_int_vector_unique(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     assert(arrSize > (maxVal - minVal));
     std::map<T, bool>& existenceMap;
@@ -163,10 +151,9 @@ std::vector<T> generate_random_int_vector_unique(size_t arrSize, T minVal = 0,
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::vector<T> generate_random_real_vector(size_t arrSize, T minVal = 0,
-                                           T maxVal = std::numeric_limits<T>::max())
+std::vector<T> generate_random_real_vector(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     std::vector<T> array;
     array.resize(arrSize);
@@ -180,10 +167,9 @@ std::vector<T> generate_random_real_vector(size_t arrSize, T minVal = 0,
 }
 
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::set<T> generate_random_int_set(size_t arrSize, T minVal = 0,
-                                    T maxVal = std::numeric_limits<T>::max())
+std::set<T> generate_random_int_set(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     std::set<T> array;
 
@@ -195,10 +181,9 @@ std::set<T> generate_random_int_set(size_t arrSize, T minVal = 0,
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::set<T> generate_random_real_set(size_t arrSize, T minVal = 0,
-                                     T maxVal = std::numeric_limits<T>::max())
+std::set<T> generate_random_real_set(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     std::set<T> array;
 
@@ -210,10 +195,9 @@ std::set<T> generate_random_real_set(size_t arrSize, T minVal = 0,
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::list<T> generate_random_int_list(size_t arrSize, T minVal = 0,
-                                      T maxVal = std::numeric_limits<T>::max())
+std::list<T> generate_random_int_list(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     std::list<T> array;
 
@@ -225,10 +209,9 @@ std::list<T> generate_random_int_list(size_t arrSize, T minVal = 0,
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-std::list<T> generate_random_real_list(size_t arrSize, T minVal = 0,
-                                       T maxVal = std::numeric_limits<T>::max())
+std::list<T> generate_random_real_list(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     std::list<T> array;
 
@@ -240,10 +223,9 @@ std::list<T> generate_random_real_list(size_t arrSize, T minVal = 0,
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-T** generate_random_int_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal = 0,
-                                 T maxVal = std::numeric_limits<T>::max())
+T** generate_random_int_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     T** array = allocate_array<T*>(arrSize_x);
 
@@ -260,10 +242,9 @@ T** generate_random_int_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal = 
     return array;
 }
 
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 template<class T>
-T** generate_random_real_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal = 0,
-                                  T maxVal = std::numeric_limits<T>::max())
+T** generate_random_real_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     T** array = allocate_array<T*>(arrSize_x);
 
@@ -279,8 +260,7 @@ T** generate_random_real_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal =
 
     return array;
 }
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 
 } // end namespace DataGenerator
-#endif // __Data_Generator__
