@@ -1,0 +1,116 @@
+[2017-02-16 21:15:52.810] [basic_logger] [info] Start timing for: Data generation
+[2017-02-16 21:17:01.946] [basic_logger] [info] Running time: 69,135.49ms
+[2017-02-16 21:17:01.946] [basic_logger] [info] 
+
+
+[2017-02-16 21:17:01.946] [basic_logger] [info] Start timing for: Test build-in sqrt for float number
+[2017-02-16 21:17:05.312] [basic_logger] [info] Running time: 3,365.82ms
+[2017-02-16 21:17:05.312] [basic_logger] [info] 
+
+
+[2017-02-16 21:17:05.312] [basic_logger] [info] Start timing for: Test build-in 1/sqrt for float number
+[2017-02-16 21:17:12.784] [basic_logger] [info] Running time: 7,471.49ms
+[2017-02-16 21:17:12.784] [basic_logger] [info] 
+
+
+[2017-02-16 21:17:12.784] [basic_logger] [info] Start timing for: Test build-in sqrt for double number
+[2017-02-16 21:17:17.756] [basic_logger] [info] Running time: 4,972.05ms
+[2017-02-16 21:17:17.756] [basic_logger] [info] 
+
+
+[2017-02-16 21:17:17.757] [basic_logger] [info] Start timing for: Test build-in 1/sqrt for double number
+[2017-02-16 21:17:22.364] [basic_logger] [info] Running time: 4,607.32ms
+[2017-02-16 21:17:22.364] [basic_logger] [info] 
+
+
+[2017-02-16 21:17:22.364] [basic_logger] [info] Start timing for: Test fast func sqrt for float number (1 iteration)
+[2017-02-16 21:17:24.497] [basic_logger] [info] Running time: 2,132.80ms
+[2017-02-16 21:17:32.097] [basic_logger] [info] 
+
+
+[2017-02-16 21:17:32.097] [basic_logger] [info] Start timing for: Test fast func rsqrt for float number (1 iteration)
+[2017-02-16 21:17:33.734] [basic_logger] [info] Running time: 1,636.16ms
+[2017-02-16 21:17:38.820] [basic_logger] [info] 
+
+
+[2017-02-16 21:17:38.820] [basic_logger] [info] Start timing for: Test fast func sqrt for double number (1 iteration)
+[2017-02-16 21:17:41.080] [basic_logger] [info] Running time: 2,260.26ms
+[2017-02-16 21:17:48.096] [basic_logger] [info] Max relative error: 1.1797762211e-03
+[2017-02-16 21:17:48.096] [basic_logger] [info] 
+
+
+[2017-02-16 21:17:48.096] [basic_logger] [info] Start timing for: Test fast func rsqrt for double number (1 iteration)
+[2017-02-16 21:17:49.756] [basic_logger] [info] Running time: 1,659.40ms
+[2017-02-16 21:17:54.585] [basic_logger] [info] Max relative error: 1.7510386280e-03
+[2017-02-16 21:17:54.585] [basic_logger] [info] 
+
+
+[2017-02-16 21:17:54.585] [basic_logger] [info] Start timing for: Test fast func sqrt for float number (2 iteration)
+[2017-02-16 21:17:57.454] [basic_logger] [info] Running time: 2,868.55ms
+[2017-02-16 21:18:06.985] [basic_logger] [info] Max relative error: 1.9093085939e-06
+[2017-02-16 21:18:06.985] [basic_logger] [info] 
+
+
+[2017-02-16 21:18:06.985] [basic_logger] [info] Start timing for: Test fast func rsqrt for float number (2 iteration)
+[2017-02-16 21:18:09.464] [basic_logger] [info] Running time: 2,478.43ms
+[2017-02-16 21:18:15.305] [basic_logger] [info] Max relative error: 2.7209712243e-06
+[2017-02-16 21:18:15.305] [basic_logger] [info] 
+
+
+[2017-02-16 21:18:15.305] [basic_logger] [info] Start timing for: Test fast func sqrt for double number (2 iteration)
+[2017-02-16 21:18:18.057] [basic_logger] [info] Running time: 2,750.97ms
+[2017-02-16 21:18:27.286] [basic_logger] [info] Max relative error: 2.0869868492e-06
+[2017-02-16 21:18:27.286] [basic_logger] [info] 
+
+
+[2017-02-16 21:18:27.286] [basic_logger] [info] Start timing for: Test fast func rsqrt for double number (2 iteration)
+[2017-02-16 21:18:29.820] [basic_logger] [info] Running time: 2,533.73ms
+[2017-02-16 21:18:36.024] [basic_logger] [info] Max relative error: 4.5965199539e-06
+[2017-02-16 21:18:36.026] [basic_logger] [info] 
+
+
+[2017-02-16 21:18:36.027] [basic_logger] [info] Start timing for: Test fast func sqrt for float number (3 iteration)
+[2017-02-16 21:18:40.294] [basic_logger] [info] Running time: 4,265.17ms
+[2017-02-16 21:18:57.824] [basic_logger] [info] Max relative error: 7.9554524746e-08
+[2017-02-16 21:18:57.824] [basic_logger] [info] 
+
+
+[2017-02-16 21:18:57.825] [basic_logger] [info] Start timing for: Test fast func rsqrt for float number (3 iteration)
+[2017-02-16 21:19:01.803] [basic_logger] [info] Running time: 3,975.96ms
+[2017-02-16 21:19:11.791] [basic_logger] [info] Max relative error: 1.1262187627e-07
+[2017-02-16 21:19:11.791] [basic_logger] [info] 
+
+
+[2017-02-16 21:19:11.793] [basic_logger] [info] Start timing for: Test fast func sqrt for double number (3 iteration)
+[2017-02-16 21:19:16.405] [basic_logger] [info] Running time: 4,610.94ms
+[2017-02-16 21:19:28.132] [basic_logger] [info] Max relative error: 6.5334859644e-12
+[2017-02-16 21:19:28.134] [basic_logger] [info] 
+
+
+[2017-02-16 21:19:28.137] [basic_logger] [info] Start timing for: Test fast func rsqrt for double number (3 iteration)
+[2017-02-16 21:19:32.180] [basic_logger] [info] Running time: 4,040.57ms
+[2017-02-16 21:19:39.833] [basic_logger] [info] Max relative error: 3.1691901292e-11
+[2017-02-16 21:19:39.836] [basic_logger] [info] 
+
+
+[2017-02-16 21:19:39.838] [basic_logger] [info] Start timing for: Test fast func sqrt for float number (4 iteration)
+[2017-02-16 21:19:46.263] [basic_logger] [info] Running time: 6,423.70ms
+[2017-02-16 21:20:05.838] [basic_logger] [info] Max relative error: 6.5426341678e-08
+[2017-02-16 21:20:05.839] [basic_logger] [info] 
+
+
+[2017-02-16 21:20:05.840] [basic_logger] [info] Start timing for: Test fast func rsqrt for float number (4 iteration)
+[2017-02-16 21:20:11.256] [basic_logger] [info] Running time: 5,414.26ms
+[2017-02-16 21:20:21.689] [basic_logger] [info] Max relative error: 1.1262187627e-07
+[2017-02-16 21:20:21.691] [basic_logger] [info] 
+
+
+[2017-02-16 21:20:21.691] [basic_logger] [info] Start timing for: Test fast func sqrt for double number (4 iteration)
+[2017-02-16 21:20:27.658] [basic_logger] [info] Running time: 5,965.39ms
+[2017-02-16 21:20:47.906] [basic_logger] [info] Max relative error: 1.2650323168e-16
+[2017-02-16 21:20:47.907] [basic_logger] [info] 
+
+
+[2017-02-16 21:20:47.907] [basic_logger] [info] Start timing for: Test fast func rsqrt for double number (4 iteration)
+[2017-02-16 21:20:53.205] [basic_logger] [info] Running time: 5,298.04ms
+[2017-02-16 21:21:01.979] [basic_logger] [info] Max relative error: 2.2147142093e-16
