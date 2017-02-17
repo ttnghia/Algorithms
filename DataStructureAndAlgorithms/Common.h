@@ -26,4 +26,4 @@
 #include "DataGenerator.h"
 #include "DataWriter.h"
 #include "Timer.h"
-
+#include "Macros.h"

@@ -43,12 +43,12 @@
 // test
 #define __PERORMANCE_TEST_BEGIN(func) \
 {\
-    printf("Start timing for: %s\n", func) \
+    printf("Start timing for: %s\n", func); \
     Timer test_timer; \
     test_timer.tick();
 
 #define __PERORMANCE_TEST_END \
-    printf("Running time: %s\n") + test_timer.get_run_time().c_str()); \
+    printf("Running time: %s\n", test_timer.get_run_time().c_str()); \
 }
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
