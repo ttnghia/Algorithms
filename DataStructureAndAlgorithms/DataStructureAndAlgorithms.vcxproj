@@ -159,7 +159,7 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="NumberUtils.h" />
-    <ClInclude Include="ProgramParameters.h" />
+    <ClInclude Include="ProgramInstance.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
