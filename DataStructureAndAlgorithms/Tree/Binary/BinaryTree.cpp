@@ -22,12 +22,6 @@
 #include "BinaryTree.h"
 #include "../../Common.h"
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-BinaryTree::~BinaryTree()
-{
-
-}
-
-
 TreeNode* BinaryTree::searchNode(int value)
 {
 

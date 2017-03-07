@@ -17,10 +17,12 @@
 
 #pragma once
 
+#include <memory>
+
 struct TreeNode
 {
-    TreeNode* prevNode = nullptr;
-    TreeNode* nextNode = nullptr;
+    std::shared_ptr<TreeNode> prevNode = nullptr;
+    std::shared_ptr<TreeNode> nextNode = nullptr;
     int value = 0;
 };
 
@@ -28,11 +30,13 @@ class BinaryTree
 {
 public:
     BinaryTree() = default;
-    ~BinaryTree();
 
-    TreeNode* searchNode(int value);
+    std::shared_ptr<TreeNode> searchNode(int value);
     void addNode(int value);
     void deleteNode(int value);
 
     void printTree();
+
+private:
+    std::shared_ptr<TreeNode> m_HeadNode = nullptr;
 };
