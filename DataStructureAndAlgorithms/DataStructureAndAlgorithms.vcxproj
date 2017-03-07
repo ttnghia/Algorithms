@@ -161,6 +161,7 @@
     <ClInclude Include="NumberUtils.h" />
     <ClInclude Include="ProgramInstance.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="Tree\Binary\BinaryTree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackTracking\nQueens.cpp" />
@@ -171,6 +172,7 @@
     <ClCompile Include="Recursive\HanoiTower.cpp" />
     <ClCompile Include="Recursive\LongestIncreasingSequence.cpp" />
     <ClCompile Include="Recursive\MergeSort.cpp" />
+    <ClCompile Include="Tree\Binary\BinaryTree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataStructureAndAlgorithms.licenseheader" />

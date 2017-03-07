@@ -39,6 +39,9 @@
     <ClInclude Include="ProgramInstance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Tree\Binary\BinaryTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Recursive\Factorial.cpp">
@@ -63,6 +66,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Benchmarks\RSQRTBenchmark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree\Binary\BinaryTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
