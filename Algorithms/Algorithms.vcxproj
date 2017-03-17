@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{04B83070-E6C1-4130-9AD1-C1633E4F8F0A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>DataStructureAndAlgorithms</RootNamespace>
+    <RootNamespace>Algorithms</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -175,7 +175,7 @@
     <ClCompile Include="Tree\Binary\BinaryTree.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataStructureAndAlgorithms.licenseheader" />
+    <None Include="Algorithms.licenseheader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -183,7 +183,7 @@ inline T accurateSqrt4(T x)
 
 TEST_CASE("Test Case")
 {
-    auto fileLogger = spdlog::basic_logger_mt("basic_logger", "D:/Programming/DataStructureAndAlgorithms/DataStructureAndAlgorithms/Benchmarks/RSQRTBenchmark.txt");
+    auto fileLogger = spdlog::basic_logger_mt("basic_logger", "D:/Programming/Algorithms/Algorithms/Benchmarks/RSQRTBenchmark.txt");
 
     float* floatArray = nullptr;
     double* doubleArray = nullptr;

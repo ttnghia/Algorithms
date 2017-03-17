@@ -73,6 +73,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataStructureAndAlgorithms.licenseheader" />
+    <None Include="Algorithms.licenseheader" />
   </ItemGroup>
 </Project>
