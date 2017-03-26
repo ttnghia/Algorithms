@@ -38,18 +38,18 @@ bool find_list(const std::vector<int>& dvector, std::vector<int>& result, size_t
     {
         return find_list(dvector, result, startIndex + 1, sum);
     }
-
 }
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 TEST_CASE("Test Case")
 {
     std::vector<int> dvector = DataGenerator::generate_random_int_vector(200, 1, 100);
+    std::vector<int> result;
+
     for(int test = 0; test < 100; ++test)
     {
-        std::vector<int> result;
-
-        int number = DataGenerator::generate_random_int(10, 1000);
+        result.resize(0);
+        int  number  = DataGenerator::generate_random_int(10, 1000);
         bool bResult = find_list(dvector, result, 0, number);
         printf("Find: %d\n", number);
 
@@ -75,4 +75,4 @@ TEST_CASE("Test Case")
 }
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-#endif // __Program_Template__
+#endif // __Sum_To_Number__

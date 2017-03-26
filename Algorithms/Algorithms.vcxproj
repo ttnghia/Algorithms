@@ -157,6 +157,7 @@
     <ClInclude Include="DataGenerator.h" />
     <ClInclude Include="DataWriter.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="FoundationalClasses\Array\Array.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="NumberUtils.h" />
     <ClInclude Include="ProgramInstance.h" />
@@ -167,6 +168,7 @@
     <ClCompile Include="BackTracking\nQueens.cpp" />
     <ClCompile Include="BackTracking\SumToNumber.cpp" />
     <ClCompile Include="Benchmarks\RSQRTBenchmark.cpp" />
+    <ClCompile Include="FoundationalClasses\Array\ArrayTest.cpp" />
     <ClCompile Include="ProgramTemplate.cpp" />
     <ClCompile Include="Recursive\Factorial.cpp" />
     <ClCompile Include="Recursive\HanoiTower.cpp" />
