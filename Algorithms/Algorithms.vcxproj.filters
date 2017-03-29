@@ -77,7 +77,10 @@
     <ClCompile Include="Tree\Binary\BinaryTreeFromKeys.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sorting\QuickSelect.cpp">
+    <ClCompile Include="MISC\QuickSelect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MISC\PairWithGivenDifference.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

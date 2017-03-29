@@ -169,12 +169,13 @@
     <ClCompile Include="BackTracking\SumToNumber.cpp" />
     <ClCompile Include="Benchmarks\RSQRTBenchmark.cpp" />
     <ClCompile Include="FoundationalClasses\Array\ArrayTest.cpp" />
+    <ClCompile Include="MISC\PairWithGivenDifference.cpp" />
     <ClCompile Include="ProgramTemplate.cpp" />
     <ClCompile Include="Recursive\Factorial.cpp" />
     <ClCompile Include="Recursive\HanoiTower.cpp" />
     <ClCompile Include="Recursive\LongestIncreasingSequence.cpp" />
     <ClCompile Include="Recursive\MergeSort.cpp" />
-    <ClCompile Include="Sorting\QuickSelect.cpp" />
+    <ClCompile Include="MISC\QuickSelect.cpp" />
     <ClCompile Include="Tree\Binary\BinaryTreeFromKeys.cpp" />
   </ItemGroup>
   <ItemGroup>

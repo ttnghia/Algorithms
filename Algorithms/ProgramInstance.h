@@ -29,4 +29,5 @@
 //#define __BinaryTree__
 //#define  __Array__
 //#define __BST_From_Key__
-#define __QuickSelect__
+//#define __QuickSelect__
+#define  __Pair_With_Given_k__
