@@ -27,4 +27,6 @@
 //#define __Sum_To_Number__
 //#define __RSQRTBenchmark__
 //#define __BinaryTree__
-#define  __Array__
+//#define  __Array__
+//#define __BST_From_Key__
+#define __QuickSelect__

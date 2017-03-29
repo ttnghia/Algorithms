@@ -39,10 +39,10 @@
     <ClInclude Include="ProgramInstance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tree\Binary\BinaryTree.h">
+    <ClInclude Include="FoundationalClasses\Array\Array.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FoundationalClasses\Array\Array.h">
+    <ClInclude Include="Tree\Binary\BinaryTreeFromKeys.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -71,10 +71,13 @@
     <ClCompile Include="Benchmarks\RSQRTBenchmark.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tree\Binary\BinaryTree.cpp">
+    <ClCompile Include="FoundationalClasses\Array\ArrayTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FoundationalClasses\Array\ArrayTest.cpp">
+    <ClCompile Include="Tree\Binary\BinaryTreeFromKeys.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorting\QuickSelect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

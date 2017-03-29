@@ -15,28 +15,22 @@
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-#pragma once
+#include "../../ProgramInstance.h"
 
-#include <memory>
+#ifdef __BST_From_Key__
 
-struct TreeNode
+#include "BinaryTreeFromKeys.h"
+#include "../../Common.h"
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+TEST_CASE("Test Case")
 {
-    std::shared_ptr<TreeNode> prevNode = nullptr;
-    std::shared_ptr<TreeNode> nextNode = nullptr;
-    int value = 0;
-};
+    auto keys     = DataGenerator::generate_random_int_vector(100, 0, 1000);
+    auto rootTree = convertUnOrderedKeys(keys);
+    printTreeByOrder(rootTree);
+    std::cout << std::endl;
 
-class BinaryTree
-{
-public:
-    BinaryTree() = default;
+    REQUIRE(1 == 1);
+}
 
-    std::shared_ptr<TreeNode> searchNode(int value);
-    void addNode(int value);
-    void deleteNode(int value);
-
-    void printTree();
-
-private:
-    std::shared_ptr<TreeNode> m_HeadNode = nullptr;
-};
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+#endif // __BST_From_Key__
