@@ -77,10 +77,16 @@
     <ClCompile Include="Tree\Binary\BinaryTreeFromKeys.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MISC\QuickSelect.cpp">
+    <ClCompile Include="Recursive\QuickSelect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MISC\PairWithGivenDifference.cpp">
+    <ClCompile Include="Recursive\MaxProductSubarray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Searching\PairWithGivenDifference.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Searching\PairWithGivenSum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
