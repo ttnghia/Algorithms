@@ -108,6 +108,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -169,6 +170,7 @@
     <ClCompile Include="BackTracking\SumToNumber.cpp" />
     <ClCompile Include="Benchmarks\RSQRTBenchmark.cpp" />
     <ClCompile Include="FoundationalClasses\Array\ArrayTest.cpp" />
+    <ClCompile Include="LinkedList\SortList123.cpp" />
     <ClCompile Include="Searching\PairWithGivenDifference.cpp" />
     <ClCompile Include="Recursive\MaxProductSubarray.cpp" />
     <ClCompile Include="ProgramTemplate.cpp" />

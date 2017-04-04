@@ -89,6 +89,9 @@
     <ClCompile Include="Searching\PairWithGivenSum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LinkedList\SortList123.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Algorithms.licenseheader" />
