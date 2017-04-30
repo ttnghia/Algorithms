@@ -15,15 +15,48 @@
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-#include "BinaryTreeFromKeys.h"
-#include "../../Common.h"
+#include "../Common.h"
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+void replaceSpace(char* str)
+{
+    int numSpaces = 0;
+    int i         = 0;
+    while(str[i] != '\0')
+    {
+        if(str[i] == ' ')
+            ++numSpaces;
+        ++i;
+    }
+
+    int length    = i;
+    int newLength = length + 2 * numSpaces;
+
+    str[newLength--] = '\0';
+    for(i = length - 1; i >= 0; --i)
+    {
+        if(str[i] == ' ')
+        {
+            str[newLength]     = '0';
+            str[newLength - 1] = '2';
+            str[newLength - 2] = '%';
+
+            newLength -= 3;
+        }
+        else
+        {
+            str[newLength] = str[i];
+            --newLength;
+        }
+    }
+}
+
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 TEST_CASE("Test Case")
 {
-    auto keys     = DataGenerator::generate_random_int_vector(100, 0, 1000);
-    auto rootTree = convertUnOrderedKeys(keys);
-    printTreeByOrder(rootTree);
-    std::cout << std::endl;
+    char str[256] = "This is a test string. Visual Studio 2017.";
+
+    replaceSpace(str);
+    printf("%s\n", str);
 
     REQUIRE(1 == 1);
 }

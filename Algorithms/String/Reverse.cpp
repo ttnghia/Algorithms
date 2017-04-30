@@ -15,15 +15,40 @@
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-#include "BinaryTreeFromKeys.h"
-#include "../../Common.h"
+#include "../Common.h"
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+void reverseString(char* str)
+{
+    int endPos = 0;
+
+    // move the the position after the last character
+    while(str[endPos] != '\0')
+        ++endPos;
+    --endPos; // move back 1 position
+
+    int  startPos = 0;
+    char tmp;
+    while(startPos < endPos)
+    {
+        //std::swap(str[startPos], str[endPos]);
+        tmp             = str[startPos];
+        str[startPos++] = str[endPos];
+        str[endPos--]   = tmp;
+    }
+}
+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
 TEST_CASE("Test Case")
 {
-    auto keys     = DataGenerator::generate_random_int_vector(100, 0, 1000);
-    auto rootTree = convertUnOrderedKeys(keys);
-    printTreeByOrder(rootTree);
-    std::cout << std::endl;
+    char str1[] = "This is a string";
+    char str2[] = "Prediction is difficult, especially about the future";
+
+    reverseString(str1);
+    reverseString(str2);
+
+    printf("%s\n", str1);
+    printf("%s\n", str2);
 
     REQUIRE(1 == 1);
 }

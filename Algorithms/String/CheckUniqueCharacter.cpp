@@ -15,22 +15,37 @@
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-#pragma once
+#include "../Common.h"
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+bool checkUnique(const char* str, int N)
+{
+    bool charSet[256];
+    memset(charSet, false, 256 * sizeof(bool));
+
+    for(int i = 0; i < N; ++i)
+    {
+        if(str[i] == '\0')
+            return true;
+
+        if(charSet[str[i]])
+            return false;
+        charSet[str[i]] = true;
+    }
+}
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-// define which program to run
-//#define __factorial__
-//#define __Hanoi_Tower__
-//#define __Merge_Sort__
-//#define __nQueens__
-//#define __Longest_Inc_Sequence__
-//#define __Sum_To_Number__
-//#define __RSQRTBenchmark__
-//#define __BinaryTree__
-//#define  __Array__
-//#define __BST_From_Key__
-//#define __QuickSelect__
-//#define  __Pair_With_Given_k__
-//#define  __Max_Product_SubArray__
-//#define __Pair_With_Given_Sum__
-#define __Sort_List_123__
+
+TEST_CASE("Test Case")
+{
+    const char* testStr1 = "Hello";
+    const char* testStr2 = "This string is repeat!";
+    const char* testStr3 = "abcdefgh0123456789";
+    const char* testStr4 = "lvgfdssadhgfros;";
+    const char* testStr5 = "wao";
+
+    REQUIRE(checkUnique(testStr1, 256) == false);
+    REQUIRE(checkUnique(testStr2, 256) == false);
+    REQUIRE(checkUnique(testStr3, 256) == true);
+    REQUIRE(checkUnique(testStr4, 256) == false);
+    REQUIRE(checkUnique(testStr5, 256) == true);
+}
