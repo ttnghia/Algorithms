@@ -76,7 +76,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>D:\Scratch\MSVC-Build\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>D:\Scratch\MSVC-Build\$(ProjectName)\$(Configuration)\Intermediate\</IntDir>
-    <IncludePath>$(SolutionDir)Externals\spdlog\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Externals\spdlog\include;$(SolutionDir)Externals\Catch\include;$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -85,7 +85,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>D:\Scratch\MSVC-Build\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>D:\Scratch\MSVC-Build\$(ProjectName)\$(Configuration)\Intermediate\</IntDir>
-    <IncludePath>$(SolutionDir)Externals\spdlog\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Externals\spdlog\include;$(SolutionDir)Externals\Catch\include;$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -154,7 +154,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="catch.hpp" />
     <ClInclude Include="DataGenerator.h" />
     <ClInclude Include="DataWriter.h" />
     <ClInclude Include="Common.h" />
@@ -163,10 +162,10 @@
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ProgramTemplate.cpp" />
+    <None Include="Algorithms.licenseheader" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Algorithms.licenseheader" />
+    <ClCompile Include="String\CheckStringRotation.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

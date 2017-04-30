@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="catch.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="NumberUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -38,11 +35,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ProgramTemplate.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <None Include="Algorithms.licenseheader" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Algorithms.licenseheader" />
+    <ClCompile Include="String\CheckStringRotation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

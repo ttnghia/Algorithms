@@ -1,3 +1,6 @@
 [submodule "Externals/spdlog"]
 	path = Externals/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "Externals/Catch"]
+	path = Externals/Catch
+	url = https://github.com/philsquared/Catch.git
