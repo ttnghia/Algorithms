@@ -38,8 +38,8 @@ T* allocate_array(size_t arrSize)
 template<class T>
 T generate_random_int(T minVal, T maxVal)
 {
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::random_device               rd;
+    std::mt19937                     gen(rd());
     std::uniform_int_distribution<T> dis(minVal, maxVal);
 
     return dis(gen);
@@ -48,11 +48,11 @@ T generate_random_int(T minVal, T maxVal)
 template<class T>
 T generate_random_int_unique(T minVal, T maxVal, std::map<T, bool>& existenceMap)
 {
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::random_device               rd;
+    std::mt19937                     gen(rd());
     std::uniform_int_distribution<T> dis(minVal, maxVal);
 
-    T tmp;
+    T                                tmp;
     do
     {
         tmp = dis(gen);
@@ -67,8 +67,8 @@ T generate_random_int_unique(T minVal, T maxVal, std::map<T, bool>& existenceMap
 template<class T>
 T generate_random_real(T minVal, T maxVal)
 {
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::random_device                rd;
+    std::mt19937                      gen(rd());
     std::uniform_real_distribution<T> dis(minVal, maxVal);
 
     return dis(gen);
@@ -78,9 +78,9 @@ T generate_random_real(T minVal, T maxVal)
 template<class T>
 T* generate_random_int_array(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
-    T* array = allocate_array<T>(arrSize);
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    T*                               array = allocate_array<T>(arrSize);
+    std::random_device               rd;
+    std::mt19937                     gen(rd());
     std::uniform_int_distribution<T> dis(minVal, maxVal);
 
     for(size_t i = 0; i < arrSize; ++i)
@@ -95,12 +95,12 @@ template<class T>
 T* generate_random_int_array_unique(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     assert(arrSize > (maxVal - minVal));
-    std::map<T, bool>& existenceMap;
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::map<T, bool>&               existenceMap;
+    std::random_device               rd;
+    std::mt19937                     gen(rd());
     std::uniform_int_distribution<T> dis(minVal, maxVal);
 
-    T* array = allocate_array<T>(arrSize);
+    T*                               array = allocate_array<T>(arrSize);
 
     for(size_t i = 0; i < arrSize; ++i)
     {
@@ -111,7 +111,7 @@ T* generate_random_int_array_unique(size_t arrSize, T minVal = 0, T maxVal = std
         } while(existenceMap[tmp] == true);
 
         existenceMap[tmp] = true;
-        array[i] = tmp;
+        array[i]          = tmp;
     }
 
     return array;
@@ -121,9 +121,9 @@ T* generate_random_int_array_unique(size_t arrSize, T minVal = 0, T maxVal = std
 template<class T>
 T* generate_random_real_array(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
-    T* array = allocate_array<T>(arrSize);
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    T*                                array = allocate_array<T>(arrSize);
+    std::random_device                rd;
+    std::mt19937                      gen(rd());
     std::uniform_real_distribution<T> dis(minVal, maxVal);
 
     for(size_t i = 0; i < arrSize; ++i)
@@ -139,10 +139,10 @@ T* generate_random_real_array(size_t arrSize, T minVal = 0, T maxVal = std::nume
 template<class T>
 std::vector<T> generate_random_int_vector(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
-    std::vector<T> array;
+    std::vector<T>                   array;
     array.resize(arrSize);
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::random_device               rd;
+    std::mt19937                     gen(rd());
     std::uniform_int_distribution<T> dis(minVal, maxVal);
 
     for(size_t i = 0; i < arrSize; ++i)
@@ -157,12 +157,12 @@ template<class T>
 std::vector<T> generate_random_int_vector_unique(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
     assert(arrSize > (maxVal - minVal));
-    std::map<T, bool>& existenceMap;
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::map<T, bool>&               existenceMap;
+    std::random_device               rd;
+    std::mt19937                     gen(rd());
     std::uniform_int_distribution<T> dis(minVal, maxVal);
 
-    std::vector<T> array;
+    std::vector<T>                   array;
     array.resize(arrSize);
 
     for(size_t i = 0; i < arrSize; ++i)
@@ -174,7 +174,7 @@ std::vector<T> generate_random_int_vector_unique(size_t arrSize, T minVal = 0, T
         } while(existenceMap[tmp] == true);
 
         existenceMap[tmp] = true;
-        array[i] = tmp;
+        array[i]          = tmp;
     }
 
     return array;
@@ -184,10 +184,10 @@ std::vector<T> generate_random_int_vector_unique(size_t arrSize, T minVal = 0, T
 template<class T>
 std::vector<T> generate_random_real_vector(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
-    std::vector<T> array;
+    std::vector<T>                    array;
     array.resize(arrSize);
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::random_device                rd;
+    std::mt19937                      gen(rd());
     std::uniform_real_distribution<T> dis(minVal, maxVal);
 
     for(size_t i = 0; i < arrSize; ++i)
@@ -203,9 +203,9 @@ std::vector<T> generate_random_real_vector(size_t arrSize, T minVal = 0, T maxVa
 template<class T>
 std::set<T> generate_random_int_set(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
-    std::set<T> array;
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::set<T>                      array;
+    std::random_device               rd;
+    std::mt19937                     gen(rd());
     std::uniform_int_distribution<T> dis(minVal, maxVal);
 
     for(size_t i = 0; i < arrSize; ++i)
@@ -220,9 +220,9 @@ std::set<T> generate_random_int_set(size_t arrSize, T minVal = 0, T maxVal = std
 template<class T>
 std::set<T> generate_random_real_set(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
-    std::set<T> array;
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::set<T>                       array;
+    std::random_device                rd;
+    std::mt19937                      gen(rd());
     std::uniform_real_distribution<T> dis(minVal, maxVal);
 
     for(size_t i = 0; i < arrSize; ++i)
@@ -237,9 +237,9 @@ std::set<T> generate_random_real_set(size_t arrSize, T minVal = 0, T maxVal = st
 template<class T>
 std::list<T> generate_random_int_list(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
-    std::list<T> array;
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::list<T>                    array;
+    std::random_device               rd;
+    std::mt19937                     gen(rd());
     std::uniform_int_distribution<T> dis(minVal, maxVal);
 
     for(size_t i = 0; i < arrSize; ++i)
@@ -254,9 +254,9 @@ std::list<T> generate_random_int_list(size_t arrSize, T minVal = 0, T maxVal = s
 template<class T>
 std::list<T> generate_random_real_list(size_t arrSize, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
-    std::list<T> array;
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    std::list<T>                     array;
+    std::random_device                rd;
+    std::mt19937                      gen(rd());
     std::uniform_real_distribution<T> dis(minVal, maxVal);
 
     for(size_t i = 0; i < arrSize; ++i)
@@ -271,9 +271,9 @@ std::list<T> generate_random_real_list(size_t arrSize, T minVal = 0, T maxVal = 
 template<class T>
 T** generate_random_int_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
-    T** array = allocate_array<T*>(arrSize_x);
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    T**                              array = allocate_array<T*>(arrSize_x);
+    std::random_device               rd;
+    std::mt19937                     gen(rd());
     std::uniform_int_distribution<T> dis(minVal, maxVal);
 
     for(size_t k = 0; k < arrSize_y; ++k)
@@ -293,9 +293,9 @@ T** generate_random_int_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal = 
 template<class T>
 T** generate_random_real_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal = 0, T maxVal = std::numeric_limits<T>::max())
 {
-    T** array = allocate_array<T*>(arrSize_x);
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    T**                               array = allocate_array<T*>(arrSize_x);
+    std::random_device                rd;
+    std::mt19937                      gen(rd());
     std::uniform_real_distribution<T> dis(minVal, maxVal);
 
     for(size_t k = 0; k < arrSize_y; ++k)
@@ -311,6 +311,4 @@ T** generate_random_real_array_2D(size_t arrSize_x, size_t arrSize_y, T minVal =
     return array;
 }
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-
-
 } // end namespace DataGenerator

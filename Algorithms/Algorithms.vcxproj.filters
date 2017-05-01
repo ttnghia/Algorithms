@@ -37,9 +37,4 @@
   <ItemGroup>
     <None Include="Algorithms.licenseheader" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="String\CheckStringRotation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
 </Project>

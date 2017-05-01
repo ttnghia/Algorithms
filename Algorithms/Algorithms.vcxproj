@@ -164,9 +164,6 @@
   <ItemGroup>
     <None Include="Algorithms.licenseheader" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="String\CheckStringRotation.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
