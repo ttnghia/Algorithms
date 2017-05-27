@@ -37,4 +37,9 @@
   <ItemGroup>
     <None Include="Algorithms.licenseheader" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Partition\Partition-k.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
