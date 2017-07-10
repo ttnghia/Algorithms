@@ -165,7 +165,7 @@
     <None Include="Algorithms.licenseheader" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Partition\Partition-k.cpp" />
+    <ClCompile Include="Tree\HuffmanTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
