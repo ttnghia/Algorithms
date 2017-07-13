@@ -31,9 +31,9 @@ bool DFS(const Graph& graph, int v, vector<bool>& visited, vector<bool>& inStack
         for(int u : graph.adj[v])
             if(!visited[u] && DFS(graph, u, visited, inStack)) return true;
             else if(inStack[u]) return true;
-     }
+    }
       
-     inStack[v] = false;
+    inStack[v] = false;
     
     return false;
 }
